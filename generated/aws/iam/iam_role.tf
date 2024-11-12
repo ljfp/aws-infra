@@ -205,7 +205,7 @@ resource "aws_iam_role" "tfer--GitHubAction-S3Access" {
 POLICY
 
   description          = "This role allows Github to perform actions on my S3 buckets."
-  managed_policy_arns  = ["arn:aws:iam::aws:policy/AmazonS3FullAccess"]
+  managed_policy_arns  = ["arn:aws:iam::aws:policy/AmazonS3FullAccess", "arn:aws:iam::aws:policy/CloudFrontFullAccess"]
   max_session_duration = "3600"
   name                 = "GitHubAction-S3Access"
   path                 = "/"

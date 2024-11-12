@@ -43,6 +43,11 @@ resource "aws_iam_role_policy_attachment" "tfer--GitHubAction-S3Access_AmazonS3F
   role       = "GitHubAction-S3Access"
 }
 
+resource "aws_iam_role_policy_attachment" "tfer--GitHubAction-S3Access_CloudFrontFullAccess" {
+  policy_arn = "arn:aws:iam::aws:policy/CloudFrontFullAccess"
+  role       = "GitHubAction-S3Access"
+}
+
 resource "aws_iam_role_policy_attachment" "tfer--aws-ec2-spot-fleet-tagging-role_AmazonEC2SpotFleetTaggingRole" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEC2SpotFleetTaggingRole"
   role       = "aws-ec2-spot-fleet-tagging-role"

@@ -42,6 +42,10 @@ output "aws_iam_role_policy_attachment_tfer--GitHubAction-S3Access_AmazonS3FullA
   value = "${aws_iam_role_policy_attachment.tfer--GitHubAction-S3Access_AmazonS3FullAccess.id}"
 }
 
+output "aws_iam_role_policy_attachment_tfer--GitHubAction-S3Access_CloudFrontFullAccess_id" {
+  value = "${aws_iam_role_policy_attachment.tfer--GitHubAction-S3Access_CloudFrontFullAccess.id}"
+}
+
 output "aws_iam_role_policy_attachment_tfer--aws-ec2-spot-fleet-tagging-role_AmazonEC2SpotFleetTaggingRole_id" {
   value = "${aws_iam_role_policy_attachment.tfer--aws-ec2-spot-fleet-tagging-role_AmazonEC2SpotFleetTaggingRole.id}"
 }
