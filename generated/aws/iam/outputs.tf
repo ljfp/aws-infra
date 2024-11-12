@@ -38,6 +38,10 @@ output "aws_iam_role_policy_attachment_tfer--AWSServiceRoleForTrustedAdvisor_AWS
   value = "${aws_iam_role_policy_attachment.tfer--AWSServiceRoleForTrustedAdvisor_AWSTrustedAdvisorServiceRolePolicy.id}"
 }
 
+output "aws_iam_role_policy_attachment_tfer--GitHubAction-S3Access_AmazonS3FullAccess_id" {
+  value = "${aws_iam_role_policy_attachment.tfer--GitHubAction-S3Access_AmazonS3FullAccess.id}"
+}
+
 output "aws_iam_role_policy_attachment_tfer--aws-ec2-spot-fleet-tagging-role_AmazonEC2SpotFleetTaggingRole_id" {
   value = "${aws_iam_role_policy_attachment.tfer--aws-ec2-spot-fleet-tagging-role_AmazonEC2SpotFleetTaggingRole.id}"
 }
@@ -80,6 +84,10 @@ output "aws_iam_role_tfer--AWSServiceRoleForSupport_id" {
 
 output "aws_iam_role_tfer--AWSServiceRoleForTrustedAdvisor_id" {
   value = "${aws_iam_role.tfer--AWSServiceRoleForTrustedAdvisor.id}"
+}
+
+output "aws_iam_role_tfer--GitHubAction-S3Access_id" {
+  value = "${aws_iam_role.tfer--GitHubAction-S3Access.id}"
 }
 
 output "aws_iam_role_tfer--aws-ec2-spot-fleet-tagging-role_id" {

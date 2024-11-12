@@ -180,6 +180,37 @@ POLICY
   path                 = "/aws-service-role/trustedadvisor.amazonaws.com/"
 }
 
+resource "aws_iam_role" "tfer--GitHubAction-S3Access" {
+  assume_role_policy = <<POLICY
+{
+  "Statement": [
+    {
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
+        },
+        "StringLike": {
+          "token.actions.githubusercontent.com:sub": "repo:ljfp/*"
+        }
+      },
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::346776441482:oidc-provider/token.actions.githubusercontent.com"
+      }
+    }
+  ],
+  "Version": "2012-10-17"
+}
+POLICY
+
+  description          = "This role allows Github to perform actions on my S3 buckets."
+  managed_policy_arns  = ["arn:aws:iam::aws:policy/AmazonS3FullAccess"]
+  max_session_duration = "3600"
+  name                 = "GitHubAction-S3Access"
+  path                 = "/"
+}
+
 resource "aws_iam_role" "tfer--aws-ec2-spot-fleet-tagging-role" {
   assume_role_policy = <<POLICY
 {
